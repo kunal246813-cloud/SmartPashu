@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartPashu - Analytics</title>
+
+    <link rel="stylesheet" href="ho.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">
+            <h1>SmartPashu</h1>
+        </div>
+
+        <nav>
+            <a href="/Dashboard/index.html">Dashboard</a>
+            <a href="/analytics/ana.html" class="active">Analytics</a>
+            <a href="/Profile/profile.html">Profile</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <div class="page-heading">
+            <h2>Health Analytics</h2>
+            <p>
+                Monitor your animal health checks, risk levels,
+                and health trends.
+            </p>
+        </div>
+
+
+        <!-- Statistics -->
+        <section class="stats-container">
+
+            <div class="stat-card">
+                <span class="stat-icon">📊</span>
+                <h3>Total Checks</h3>
+                <strong id="totalChecks">0</strong>
+                <p>Health assessments</p>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-icon">🐄</span>
+                <h3>Animals Checked</h3>
+                <strong id="animalsChecked">0</strong>
+                <p>Different animals</p>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-icon">✓</span>
+                <h3>Healthy</h3>
+                <strong id="healthyCases">0</strong>
+                <p>Low risk cases</p>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-icon">⚠</span>
+                <h3>High Risk</h3>
+                <strong id="highRiskCases">0</strong>
+                <p>Need attention</p>
+            </div>
+
+        </section>
+
+
+        <!-- Analytics Grid -->
+        <section class="analytics-grid">
+
+
+            <!-- Health Overview -->
+            <div class="analytics-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Health Overview</h3>
+                        <p>Overall health status</p>
+                    </div>
+                </div>
+
+                <div class="health-overview">
+
+                    <div class="health-circle">
+                        <span id="healthPercentage">0%</span>
+                        <small>Healthy</small>
+                    </div>
+
+                    <div class="health-details">
+
+                        <div class="health-item">
+                            <span class="dot healthy-dot"></span>
+                            <span>Healthy</span>
+                            <strong id="healthyPercentage">0%</strong>
+                        </div>
+
+                        <div class="health-item">
+                            <span class="dot attention-dot"></span>
+                            <span>Needs Attention</span>
+                            <strong id="attentionPercentage">0%</strong>
+                        </div>
+
+                        <div class="health-item">
+                            <span class="dot risk-dot"></span>
+                            <span>High Risk</span>
+                            <strong id="riskPercentage">0%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Animal Distribution -->
+            <div class="analytics-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Animal Distribution</h3>
+                        <p>Animals checked</p>
+                    </div>
+                </div>
+
+                <div class="animal-list">
+
+                    <div class="animal-row">
+                        <span>🐄 Cow</span>
+                        <div class="progress">
+                            <div class="progress-bar" id="cowProgress"></div>
+                        </div>
+                        <strong id="cowCount">0</strong>
+                    </div>
+
+
+                    <div class="animal-row">
+                        <span>🐃 Buffalo</span>
+                        <div class="progress">
+                            <div class="progress-bar" id="buffaloProgress"></div>
+                        </div>
+                        <strong id="buffaloCount">0</strong>
+                    </div>
+
+
+                    <div class="animal-row">
+                        <span>🐐 Goat</span>
+                        <div class="progress">
+                            <div class="progress-bar" id="goatProgress"></div>
+                        </div>
+                        <strong id="goatCount">0</strong>
+                    </div>
+
+
+                    <div class="animal-row">
+                        <span>🐑 Sheep</span>
+                        <div class="progress">
+                            <div class="progress-bar" id="sheepProgress"></div>
+                        </div>
+                        <strong id="sheepCount">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Disease / Risk Analysis -->
+        <section class="analytics-card disease-section">
+
+            <div class="card-header">
+
+                <div>
+                    <h3>Risk & Disease Analysis</h3>
+                    <p>Common health problems detected</p>
+                </div>
+
+                <select id="timeFilter">
+                    <option value="7">Last 7 Days</option>
+                    <option value="30">Last 30 Days</option>
+                    <option value="90">Last 3 Months</option>
+                    <option value="365">Last Year</option>
+                </select>
+
+            </div>
+
+
+            <div class="disease-table">
+
+                <div class="table-header">
+                    <span>Health Condition</span>
+                    <span>Cases</span>
+                    <span>Risk Level</span>
+                </div>
+
+
+                <div class="table-row">
+
+                    <span>Respiratory Problems</span>
+
+                    <strong id="respiratoryCases">0</strong>
+
+                    <span class="risk medium">
+                        Medium
+                    </span>
+
+                </div>
+
+
+                <div class="table-row">
+
+                    <span>Digestive Problems</span>
+
+                    <strong id="digestiveCases">0</strong>
+
+                    <span class="risk low">
+                        Low
+                    </span>
+
+                </div>
+
+
+                <div class="table-row">
+
+                    <span>Fever / Infection</span>
+
+                    <strong id="feverCases">0</strong>
+
+                    <span class="risk high">
+                        High
+                    </span>
+
+                </div>
+
+
+                <div class="table-row">
+
+                    <span>Skin Problems</span>
+
+                    <strong id="skinCases">0</strong>
+
+                    <span class="risk medium">
+                        Medium
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Activity -->
+        <section class="analytics-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h3>Recent Health Checks</h3>
+                    <p>Your latest animal health assessments</p>
+                </div>
+                
+
+            </div>
+
+
+            <div class="recent-checks" id="recentChecks">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📋
+                    </div>
+
+                    <h4>No health checks yet</h4>
+
+                    <p>
+                        Start an animal health check from your dashboard.
+                    </p>
+
+                    <a href="/Dashboard/index.html" class="Start Health Check">
+                        Start Health Check
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recommendation -->
+        <section class="recommendation">
+
+            <div class="recommendation-icon">
+                💡
+            </div>
+
+            <div>
+                <h3>Health Monitoring Tip</h3>
+
+                <p>
+                    Regularly monitor your animals and record symptoms
+                    early. Early detection can help identify potential
+                    health problems sooner.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+
+            <strong>Important:</strong>
+
+            Analytics are based on the health information entered
+            into SmartPashu and are intended for monitoring and
+            decision-support purposes only. They should not replace
+            examination or diagnosis by a qualified veterinarian.
+
+        </div>
+
+    </main>
+
+
+    <script src="analytics.js"></script>
+
+</body>
+
+</html>

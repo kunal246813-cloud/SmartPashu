@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPashu - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>SmartPashu</h1>
+    <h2>Welcome Back</h2>
+
+    <p>Login to check and manage animal health information.</p>
+
+    <form action="/login" method="POST">
+
+        <label for="email">Email Address:</label>
+        <br>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <br><br>
+
+        <label for="password">Password:</label>
+        <br>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+        >
+
+        <br><br>
+
+        <input
+            type="checkbox"
+            id="remember"
+            name="remember"
+        >
+        <label for="remember">Remember me</label>
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <br>
+
+    <a href="forgot.html">Forgot Password?</a>
+
+    <br><br>
+
+    <p>OR</p>
+
+    <button type="button" onclick="googleLogin()">
+        Continue with Google
+    </button>
+
+    <br><br>
+
+    <p>
+        Don't have an account?
+        <a href="register.html">Create Account</a>
+    </p>
+
+</body>
+</html>
+
